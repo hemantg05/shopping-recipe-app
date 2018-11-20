@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { NoRecipeSelectedComponent } from './recipes/no-recipe-selected/no-recipe-selected.component';
 
 export const appRoutes: Routes = [
   {
@@ -15,7 +17,17 @@ export const appRoutes: Routes = [
   },
   {
     path: 'recipes',
-    component: RecipesComponent
+    component: RecipesComponent,
+    children: [
+      {
+        path: '',
+        component: NoRecipeSelectedComponent,
+      },
+      {
+        path: ':id',
+        component: RecipeDetailComponent,
+      }
+    ]
   }
 ];
 

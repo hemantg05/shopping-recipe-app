@@ -4,6 +4,7 @@ import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { NoRecipeSelectedComponent } from './recipes/no-recipe-selected/no-recipe-selected.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 export const appRoutes: Routes = [
   {
@@ -22,6 +23,14 @@ export const appRoutes: Routes = [
       {
         path: '',
         component: NoRecipeSelectedComponent,
+      },
+      {
+        path: 'new',
+        component: RecipeEditComponent,
+      },
+      {
+        path: ':id/edit',
+        component: RecipeEditComponent
       },
       {
         path: ':id',
